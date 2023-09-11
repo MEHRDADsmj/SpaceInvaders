@@ -7,7 +7,7 @@
 int main()
 {
     std::unique_ptr<sf::RenderWindow> window = std::make_unique<sf::RenderWindow>(sf::VideoMode(800, 600), "SpaceInvaders!");
-    window->setVerticalSyncEnabled(true);
+    //window->setVerticalSyncEnabled(true);
     sf::CircleShape shape(300.f, 32);
     shape.setFillColor(sf::Color::Green);
 

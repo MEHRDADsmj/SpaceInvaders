@@ -6,7 +6,11 @@ namespace Utility
 static class TimeUtility
 {
 public:
-	static int GetUnixNow();
+	/// <summary>
+	/// Calculates Unix time in miliseconds
+	/// </summary>
+	/// <returns>Unix time in miliseconds</returns>
+	static long long GetUnixNow() noexcept;
 };
 
 }

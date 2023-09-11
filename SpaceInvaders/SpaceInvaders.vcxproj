@@ -142,11 +142,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Utility\InputSystem.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Utility\TimeUtility.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h" />
+    <ClInclude Include="Utility\InputSystem.h" />
     <ClInclude Include="Utility\TimeUtility.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

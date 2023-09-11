@@ -3,6 +3,7 @@
 #include <memory>
 #include "Game.h"
 #include "Utility\TimeUtility.h"
+#include "Utility\InputSystem.h"
 
 int main()
 {
@@ -12,6 +13,7 @@ int main()
     shape.setFillColor(sf::Color::Green);
 
     std::unique_ptr<Game> game = std::make_unique<Game>();
+    std::unique_ptr<Utility::InputSystem> inputSystem = std::make_unique<Utility::InputSystem>();
 
     if (window && game)
     {
@@ -29,6 +31,7 @@ int main()
                 window->close();
         }
         
+        inputSystem->Tick();
         game->Update((Utility::TimeUtility::GetUnixNow() - currentTime) / 1000.f);
 
         window->clear();

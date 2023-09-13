@@ -7,12 +7,23 @@ void InputSystem::Tick()
 {
 	for (short keyCode = 0; keyCode < sf::Keyboard::KeyCount; ++keyCode)
 	{
-		keyStat[(sf::Keyboard::Key)keyCode] = sf::Keyboard::isKeyPressed((sf::Keyboard::Key)keyCode);
+		if (sf::Keyboard::isKeyPressed((sf::Keyboard::Key)keyCode))
+		{
+			std::for_each (keyAction[(sf::Keyboard::Key)keyCode].begin(), keyAction[(sf::Keyboard::Key)keyCode].end(), 
+				[](const std::function<void(void)>& func) -> void 
+				{
+					 func();
+				});
+		}
 	}
+}
 
-	std::for_each (keyStat.begin(), keyStat.end(), [](const std::pair<sf::Keyboard::Key, bool> pair) -> void 
-	{
-		if (!pair.second) return;
-		std::cout << pair.first << std::endl;
-	});
+void InputSystem::BindAction(sf::Keyboard::Key key, std::function<void(void)>&& func)
+{
+	keyAction[key].push_back(func);
+}
+
+void InputSystem::UnbindAction(sf::Keyboard::Key key, std::function<void(void)>&& func)
+{
+	// TODO: make it happen. Probably write a delegate system
 }

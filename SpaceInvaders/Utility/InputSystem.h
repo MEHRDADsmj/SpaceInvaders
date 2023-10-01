@@ -14,8 +14,8 @@ private:
 
 public:
 	void Tick();
-	void BindAction(sf::Keyboard::Key key, std::function<void(void)>&& func);
-	void UnbindAction(sf::Keyboard::Key key, std::function<void(void)>&& func);
+	void BindAction(sf::Keyboard::Key key, std::function<void(void)> func);
+	void UnbindAction(sf::Keyboard::Key key, std::function<void(void)> func);
 };
 
 }

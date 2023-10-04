@@ -14,6 +14,8 @@ class Component;
 class ObjectBase
 {
 public:
+	virtual ~ObjectBase();
+
 	virtual void Update(double deltaTime);
 	void AddComponent(Core::Component* comp);
 

@@ -2,6 +2,14 @@
 #include "Component.h"
 #include <algorithm>
 
+Core::ObjectBase::~ObjectBase()
+{
+	std::for_each(components.begin(), components.end(), [](std::shared_ptr<Core::Component> it) -> void
+		{
+			it.reset();
+		});
+}
+
 void Core::ObjectBase::Update(double deltaTime)
 {
 	std::for_each(components.begin(), components.end(), [](std::shared_ptr<Core::Component> it) -> void

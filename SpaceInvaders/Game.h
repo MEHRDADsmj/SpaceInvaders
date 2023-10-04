@@ -7,12 +7,12 @@ public:
 	~Game();
 
 	void Start();
-	void Update(float frameTime);
+	void Update(double frameTime);
 	void Close();
 
 	/// <summary>
 	/// Amount of time passed since the previous frame in seconds
 	/// </summary>
-	float deltaTime;
+	double deltaTime;
 };
 

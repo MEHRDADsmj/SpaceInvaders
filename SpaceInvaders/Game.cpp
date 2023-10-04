@@ -16,7 +16,7 @@ void Game::Start()
 
 }
 
-void Game::Update(float frameTime)
+void Game::Update(double frameTime)
 {
 	std::cout << frameTime << std::endl;
 	deltaTime = frameTime;

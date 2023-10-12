@@ -1,6 +1,7 @@
 #include "ObjectBase.h"
 #include "Component.h"
 #include <algorithm>
+#include <type_traits>
 
 Core::ObjectBase::~ObjectBase()
 {
@@ -22,11 +23,4 @@ void Core::ObjectBase::AddComponent(Core::Component* comp)
 {
 	std::shared_ptr<Core::Component> ptr {comp};
 	components.push_back(ptr);
-}
-
-template<class T>
-std::shared_ptr<T> Core::CreateObject()
-{
-	if (std::is_base_of_v<Core::ObjectBase, T> == false) return nullptr;
-	return std::make_shared<T>();
 }

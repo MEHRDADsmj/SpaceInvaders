@@ -2,12 +2,11 @@
 
 #include <vector>
 #include <memory>
-#include <type_traits>
 
 namespace Core
 {
 	template<class T>
-	std::shared_ptr<T> CreateObject();
+	static std::shared_ptr<T> CreateObject();
 
 class Component;
 
@@ -23,4 +22,11 @@ private:
 	std::vector<std::shared_ptr<Core::Component>> components;
 };
 
+}
+
+template<class T>
+std::shared_ptr<T> Core::CreateObject()
+{
+	if (std::is_base_of<Core::ObjectBase, T>::value == false) return nullptr;
+	return std::make_shared<T>();
 }

@@ -4,6 +4,8 @@
 #include "Game.h"
 #include "Utility\TimeUtility.h"
 #include "Utility\InputSystem.h"
+#include "Core\ObjectBase.h"
+#include "Core\Component.h"
 
 int main()
 {

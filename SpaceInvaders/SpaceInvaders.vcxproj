@@ -147,6 +147,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Components\SpriteComponent.cpp" />
     <ClCompile Include="Core\Component.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Core\ObjectBase.cpp" />
@@ -155,6 +156,7 @@
     <ClCompile Include="Utility\TimeUtility.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Components\SpriteComponent.h" />
     <ClInclude Include="Core\Component.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Core\ObjectBase.h" />
